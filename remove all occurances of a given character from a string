@@ -1,0 +1,32 @@
+package recursion;
+import java.util.Scanner;
+
+
+
+public class removeX {
+	
+	public static String removeXfromString(String str)
+	{
+		if(str.length()==0)
+		{
+			return str;
+		}
+		String ans="";
+		if(str.charAt(0)!='x')
+		{	
+			ans=ans+str.charAt(0);	 
+		}
+		String smallAns =removeXfromString(str.substring(1));
+		return ans+smallAns;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s =new Scanner(System.in);
+		String st = s.nextLine();
+		
+		String output =removeXfromString(st);
+		System.out.println(output);
+	}
+
+}
